@@ -1,0 +1,22 @@
+@startuml
+hide footbox
+
+class Pedido <<entity>> {
+    - id : UUID
+    - cliente : String
+    - data : LocalDate
+    - valor : BigDecimal
+}
+
+enum StatusPedido <<enum>> {
+    NOVO
+    PROCESSADO
+    ENVIADO
+    ENTREGUE
+    CANCELADO
+}
+
+Pedido -- "1" StatusPedido : possui
+
+
+@enduml
